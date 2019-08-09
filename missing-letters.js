@@ -8,12 +8,16 @@ PASS
 
 function fearNotLetter(str) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz'
-  const alphabetIndex = alphabet.indexOf(str[0])
+  const alphabetStartIndex = alphabet.indexOf(str[0])
   let stringIndex = 0
 
-  for (let i = alphabetIndex; i < str.length + alphabetIndex; i++) {
-    if (str[stringIndex] !== alphabet[i]) {
-      return alphabet[i]
+  // Start iterating alphabet from index of str first letter.
+  for (let i = alphabetStartIndex; i < str.length + alphabetStartIndex; i++) {
+    const currentStringLetter = str[stringIndex]
+    const currentAlphabetLetter = alphabet[i]
+
+    if (currentStringLetter !== currentAlphabetLetter) {
+      return currentAlphabetLetter
     }
 
     stringIndex++
