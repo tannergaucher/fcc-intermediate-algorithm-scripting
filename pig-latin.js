@@ -13,29 +13,33 @@ PASS
 function translatePigLatin(str) {
   const strArr = str.split('')
 
-  //  find the index of the first vowel
+  //  Find the index of the first vowel.
   const firstVowelIndex = strArr.findIndex(
     el => el === 'a' || el === 'e' || el === 'i' || el === 'o' || el === 'u'
   )
 
-  // handle no vowels
+  // Handle no vowels.
   if (firstVowelIndex === -1) return `${str}ay`
 
-  //   if str starts with a vowel
+  //   If str starts with a vowel,
   if (firstVowelIndex === 0) {
+    // just add suffix.
     strArr.push('way')
-    const answer = strArr.join('')
 
-    return answer
+    // Return a string.
+    return strArr.join('')
   } else {
-    // slice all consonants before firstVowelIndex
+    // Get consonant cluster.
     const consonantCluser = strArr.slice(0, firstVowelIndex)
-    const base = strArr.slice(firstVowelIndex)
-    base.push(consonantCluser)
-    base.push('ay')
-    const answer = base.flat().join('')
+    // Slice all consonants before firstVowelIndex to make base array.
+    const wordBaseArr = strArr.slice(firstVowelIndex)
+    // Add consonant cluster back, at the end.
+    wordBaseArr.push(consonantCluser)
+    // Siffix it.
+    wordBaseArr.push('ay')
 
-    return answer
+    // Return a string.
+    return wordBaseArr.flat().join('')
   }
 }
 
