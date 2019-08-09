@@ -14,8 +14,9 @@ PASS
 */
 
 function myReplace(str, before, after) {
-  // preserve the case of before
+  // If before is uppercase,
   if (before[0] === before[0].toUpperCase()) {
+    // make after uppercase.
     after = after[0].toUpperCase() + after.slice(1)
   }
 
@@ -25,9 +26,3 @@ function myReplace(str, before, after) {
 }
 
 myReplace('His name is Tom', 'Tom', 'john')
-
-/* 
-NOTES
-How to use a variable in a regular expression? 
-Construct a new RegExp object.
-*/
