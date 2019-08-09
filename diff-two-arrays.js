@@ -8,7 +8,7 @@ PASS
 */
 
 function diffArray(arr1, arr2) {
-  var newArr = []
+  const newArr = []
 
   arr1.map(value => {
     if (arr2.indexOf(value) === -1) {
