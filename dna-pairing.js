@@ -13,8 +13,7 @@ PASS
 */
 
 function pairElement(str) {
-  const answer = []
-  // make pairs object
+  const pairsArray = []
   const pairs = {
     A: 'T',
     T: 'A',
@@ -22,12 +21,13 @@ function pairElement(str) {
     C: 'G',
   }
 
-  // iterate string, push letter and it's pair to array
+  // Iterate string. Push an array of current letter and it's pair to pairs array.
   for (let letter in str) {
-    answer.push([str[letter], pairs[str[letter]]])
+    const currentLetter = str[letter]
+    pairsArray.push(currentLetter, pairs[currentLetter])
   }
 
-  return answer
+  return pairsArray
 }
 
 pairElement('ATCGA')
