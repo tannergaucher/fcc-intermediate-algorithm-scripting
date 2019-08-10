@@ -11,8 +11,6 @@ function destroyer(arr) {
     const currentDestroyer = arguments[i]
     arguments[0] = arguments[0].filter(num => num !== currentDestroyer)
   }
-
-  return arr
 }
 
 destroyer([2, 3, 2, 3], 2, 3)
